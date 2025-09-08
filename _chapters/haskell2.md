@@ -89,7 +89,36 @@ The following visual summary shows pair data structures with accessor functions 
 - with one type parameter (by convention called `a` in Haskell, and `T` in TypeScript)
 - with two type parameters such that the two elements may be different types
 
-![Polymorphism Summary](/assets/images/chapterImages/haskell2/haskellPolymorphism.png)
+<table>
+  <tr>
+    <th>Haskell</th>
+    <th>TypeScript</th>
+  </tr>
+  <tr>
+  <td>
+
+```haskell
+data PairOfInt = PairOfInt { fst::Int, sec::Int }
+
+data PairOfA a = PairOfA { fst::a, sec::a }
+
+data Pair a b = Pair { fst::a, sec::b }
+```
+
+  </td>
+  <td>
+
+```typescript
+type PairOfInt = { fst: Int, sec: Int }
+
+type PairOfT<T> = { fst: T, sec: T }
+
+type Pair<U, V> = { fst: U, sec: V }
+```
+      
+  </td>
+  </tr>
+</table>
 
 ## Type Kinds
 
